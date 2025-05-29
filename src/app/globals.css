@@ -3,10 +3,17 @@
 
 @custom-variant dark (&:is(.dark *));
 
-body {
-  scroll-behavior: smooth;
+html {
   width: 100vw;
   height: 100vh;
+}
+
+body {
+  scroll-behavior: smooth;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 @theme inline {
@@ -123,4 +130,30 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #6b7280 #0a0a0a; /* thumb track */
+}
+
+/* WebKit (Chrome, Edge, Safari, Opera) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a; /* gray-950 */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #6b7280; /* gray-500 */
+  border-radius: 6px;
+  border: 2px solid #0a0a0a; /* creates inset gap */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #9ca3af; /* gray-400 */
 }

@@ -1,14 +1,14 @@
 "use client";
 
-import Stack from "@/components/ui/Stack";
 import Filterbar from "./Filterbar";
+import Content from "./Content";
 
 const Main = () => {
   return (
-    <Stack>
+    <div className="w-full h-full lg:w-3/5 mx-auto flex flex-col ">
       <Filterbar />
-    </Stack>
+      <Content />
+    </div>
   );
 };
-
 export default Main;

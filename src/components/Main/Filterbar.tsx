@@ -10,7 +10,7 @@ import { Search } from "lucide-react";
 
 const Filterbar = () => {
   return (
-    <div className="w-full py-8 px-4 lg:px-0 flex-grow flex flex-col">
+    <div className="w-full py-8 px-4 lg:px-0 flex flex-col">
       {/* Toolbar */}
       <div className="w-full flex gap-2 flex-col lg:flex-row">
         <div className="relative w-full">
