@@ -4,7 +4,7 @@ import { Gamepad2, Trophy } from "lucide-react";
 const Navbar = () => {
   return (
     <Stack>
-      <div className="w-full border-b border-gray-800 p-4 flex flex-col gap-1.5">
+      <div className="w-full border-b border-gray-400 p-4 lg:px-0 flex flex-col gap-1.5">
         {/* Logo and title */}
         <div className="flex gap-4 items-center w-full">
           <Gamepad2 className="h-8 w-8 text-blue-400" />
@@ -14,8 +14,8 @@ const Navbar = () => {
         </div>
 
         {/* Subtitle and Date*/}
-        <div className="w-full flex justify-between">
-          <p className="text-gray-400 text-lg">
+        <div className="w-full flex justify-between flex-col gap-2 lg:flex-row">
+          <p className="text-gray-400  text-md lg:text-lg">
             Prepare your party. The next quest is coming!
           </p>
           <div className="flex items-center gap-3 text-sm text-gray-400">
