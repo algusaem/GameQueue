@@ -9,8 +9,9 @@ export interface Game {
   tags: Tag[];
   released: string;
   slug: string;
+  platforms?: { platform: Platform }[];
+  genres?: Genre[];
 }
-
 export interface RawgGame {
   id: number;
   name: string;
