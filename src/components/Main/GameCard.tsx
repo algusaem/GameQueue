@@ -4,6 +4,7 @@ import { Button } from "../ui/button";
 import { GameCardProps, Genre, Platform } from "@/interfaces/Content/interface";
 import { Calendar } from "lucide-react";
 import useFetchDetails from "@/hooks/useFetchDetails";
+import Link from "next/link";
 
 const GameCard = ({ game }: GameCardProps) => {
   const { data, isLoading } = useFetchDetails(game.slug);
@@ -80,13 +81,14 @@ const GameCard = ({ game }: GameCardProps) => {
                   : "No release date"}
               </p>
             </div>
-            <Button
-              className=" bg-gray-600 hover:bg-gray-500 w-full flex-1"
-              variant="default"
-              onClick={() => {}}
-            >
-              More info
-            </Button>
+            <Link href={`/details/${game.slug}`}>
+              <Button
+                className=" bg-gray-600 hover:bg-gray-500 w-full flex-1"
+                variant="default"
+              >
+                More info
+              </Button>
+            </Link>
           </div>
         </>
       )}
