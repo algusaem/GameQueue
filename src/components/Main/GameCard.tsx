@@ -10,7 +10,7 @@ const GameCard = ({ game }: GameCardProps) => {
   const { data, isLoading } = useFetchDetails(game.slug);
 
   return (
-    <Card className="bg-transparent text-white min-h-120 max-h-full gap-0 rounded-md overflow-hidden">
+    <Card className="bg-transparent text-white min-h-120 max-h-full gap-0  overflow-hidden ">
       {isLoading ? (
         <div className="w-full h-full flex justify-center items-center">
           Loading...
