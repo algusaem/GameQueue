@@ -37,7 +37,7 @@ const GameCard = ({ game }: GameCardProps) => {
 
             {/* Developers */}
             <div className="w-full flex text-lg font-semibold text-gray-400">
-              <p>{data.developers[0].name}</p>
+              <p>{data.developers[0]?.name}</p>
             </div>
 
             {/* Description */}
