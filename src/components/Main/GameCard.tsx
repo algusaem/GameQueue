@@ -5,6 +5,7 @@ import { GameCardProps, Genre, Platform } from "@/interfaces/Content/interface";
 import { Calendar } from "lucide-react";
 import useFetchDetails from "@/hooks/useFetchDetails";
 import Link from "next/link";
+import Tag from "../ui/tag";
 
 const GameCard = ({ game }: GameCardProps) => {
   const { data, isLoading } = useFetchDetails(game.slug);
@@ -97,11 +98,3 @@ const GameCard = ({ game }: GameCardProps) => {
 };
 
 export default GameCard;
-
-const Tag = ({ children }: { children: string }) => {
-  return (
-    <span className="ring-2 ring-gray-500 p-2 px-4 rounded-xl font-medium ring-inset whitespace-nowrap text-gray-400">
-      {children}
-    </span>
-  );
-};
