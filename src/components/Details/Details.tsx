@@ -2,6 +2,8 @@
 import useFetchDetails from "@/hooks/useFetchDetails";
 import Header from "./Header";
 import Image from "next/image";
+import DetailsBody from "./Body";
+import Body from "./Body";
 
 const Details = ({ slug }: { slug: string }) => {
   const { data, isLoading, error } = useFetchDetails(slug);
@@ -32,8 +34,9 @@ const Details = ({ slug }: { slug: string }) => {
           <Header data={data} />
         </div>
       </div>
-
-      <div className="w-full">Rest of the data</div>
+      <div className="w-full flex justify-center">
+        <Body data={data} />
+      </div>
     </div>
   );
 };
