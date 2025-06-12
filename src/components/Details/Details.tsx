@@ -2,7 +2,6 @@
 import useFetchDetails from "@/hooks/useFetchDetails";
 import Header from "./Header";
 import Image from "next/image";
-import DetailsBody from "./Body";
 import Body from "./Body";
 
 const Details = ({ slug }: { slug: string }) => {
