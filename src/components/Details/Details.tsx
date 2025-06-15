@@ -10,7 +10,7 @@ const Details = ({ slug }: { slug: string }) => {
   if (isLoading)
     return <p className="w-full flex justify-center">Loading...</p>;
   if (error) return <p className="w-full flex justify-center">Error loading</p>;
-
+  console.log(data);
   return (
     <div className="w-full min-h-screen">
       <div className="relative w-full min-h-[60vh]">

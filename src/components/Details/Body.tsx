@@ -1,16 +1,49 @@
+import { ReactNode } from "react";
 import About from "./About";
 import Screenshots from "./Screenshots";
 import Tags from "./Tags";
+import Stores from "./Stores";
+import { BodyProps } from "@/interfaces/Details/interface";
 
-const Body = ({ data }) => {
+const Body = ({ data }: { data: BodyProps }) => {
   const areTags = data.tags && data.tags.length > 0;
+
   return (
     <div className="w-full lg:w-3/5 flex flex-col gap-4 mt-auto px-4 sm:px-6 lg:px-0 pb-4">
-      <About description_raw={data.description_raw} />
-      <Screenshots slug={data.slug} />
-      {areTags && <Tags tags={data.tags} />}
+      <Section title="About">
+        <About description_raw={data.description_raw} />
+      </Section>
+
+      <Section title="Screenshots">
+        <Screenshots slug={data.slug} />
+      </Section>
+
+      {areTags && (
+        <Section title="Tags">
+          <Tags tags={data.tags} />
+        </Section>
+      )}
+
+      {data.stores && (
+        <Section title="Where to buy">
+          <Stores slug={data.slug} storeData={data.stores} />
+        </Section>
+      )}
     </div>
   );
 };
 
 export default Body;
+
+const Section = ({
+  title,
+  children,
+}: {
+  title: string;
+  children: ReactNode;
+}) => (
+  <div className="w-full flex flex-col gap-4 mt-10">
+    <p className="text-2xl font-bold">{title}</p>
+    {children}
+  </div>
+);

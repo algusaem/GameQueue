@@ -1,7 +1,6 @@
 const About = ({ description_raw }: { description_raw: string }) => {
   return (
-    <div className="w-full flex flex-col gap-4 mt-10">
-      <p className="text-2xl font-bold">About</p>
+    <>
       {description_raw
         .trim()
         .split("\n")
@@ -13,7 +12,7 @@ const About = ({ description_raw }: { description_raw: string }) => {
               </p>
             )
         )}
-    </div>
+    </>
   );
 };
 
