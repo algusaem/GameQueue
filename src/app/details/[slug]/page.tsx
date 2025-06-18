@@ -2,11 +2,12 @@ import Providers from "@/app/providers";
 import Details from "@/components/Details/Details";
 import Navbar from "@/components/Navbar/Navbar";
 
-type Params = Promise<{ slug: string }>;
-
-const DetailsPage = async ({ params }: { params: { slug: Params } }) => {
+export default async function DetailsPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const { slug } = await params;
-
   return (
     <div className="w-full min-h-screen bg-gray-950 text-white flex flex-col">
       <Providers>
@@ -15,6 +16,4 @@ const DetailsPage = async ({ params }: { params: { slug: Params } }) => {
       </Providers>
     </div>
   );
-};
-
-export default DetailsPage;
+}
