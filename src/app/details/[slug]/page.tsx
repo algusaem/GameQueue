@@ -2,7 +2,7 @@ import Providers from "@/app/providers";
 import Details from "@/components/Details/Details";
 import Navbar from "@/components/Navbar/Navbar";
 
-const DetailsPage = async ({ params }: { params: { slug: string } }) => {
+const DetailsPage = ({ params }: { params: { slug: string } }) => {
   const { slug } = params;
 
   return (
