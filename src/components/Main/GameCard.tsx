@@ -1,17 +1,22 @@
 import Image from "next/image";
 import { Card } from "../ui/card";
-import { Button } from "../ui/button";
 import { GameCardProps, Genre, Platform } from "@/interfaces/Content/interface";
 import { Calendar } from "lucide-react";
 import useFetchDetails from "@/hooks/useFetchDetails";
-import Link from "next/link";
 import Tag from "../ui/tag";
+import { useRouter } from "next/navigation";
 
 const GameCard = ({ game }: GameCardProps) => {
   const { data, isLoading } = useFetchDetails(game.slug);
+  const navigate = useRouter();
 
   return (
-    <Card className="bg-transparent text-white min-h-120 max-h-full gap-0  overflow-hidden ">
+    <Card
+      className="bg-transparent text-white min-h-120 max-h-full gap-0 overflow-hidden"
+      onClick={() => {
+        navigate.push(`/details/${game.slug}`);
+      }}
+    >
       {isLoading ? (
         <div className="w-full h-full flex justify-center items-center">
           Loading...
@@ -82,14 +87,6 @@ const GameCard = ({ game }: GameCardProps) => {
                   : "No release date"}
               </p>
             </div>
-            <Link href={`/details/${game.slug}`}>
-              <Button
-                className=" bg-gray-600 hover:bg-gray-500 w-full flex-1"
-                variant="default"
-              >
-                More info
-              </Button>
-            </Link>
           </div>
         </>
       )}

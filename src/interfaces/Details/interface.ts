@@ -43,6 +43,7 @@ export interface StoresProps {
 }
 
 export type BodyProps = {
+  screenshots_count: number;
   slug: string;
   description_raw: string;
   tags: Tag[];
