@@ -1,2 +1,1 @@
-- Card skeleton on load
 - Next month data
