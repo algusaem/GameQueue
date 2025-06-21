@@ -2,7 +2,7 @@ import { Game, Tag } from "@/interfaces/Content/interface";
 import GameCard from "./GameCard";
 import { useNewThisMonth } from "@/hooks/NewThisMonthProvider";
 import { useFilter } from "@/hooks/FilterProvider";
-import Loader from "../ui/loader";
+import ContentSkeleton from "./ContentSkeleton";
 
 const hasBannedTag = (game: Game) => {
   return game.tags.some((tag: Tag) =>
@@ -36,7 +36,8 @@ const Content = () => {
   const { newGames, isLoading, isError, error } = useNewThisMonth();
   const { searchValue, platformFilter, genreFilter } = useFilter();
 
-  if (isLoading) return <Loader />;
+  if (isLoading) return <ContentSkeleton />;
+
   if (isError) return <div>Error: {(error as Error).message}</div>;
   if (!newGames) return <div>No new games found.</div>;
 
