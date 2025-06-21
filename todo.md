@@ -1,2 +1,1 @@
-- Custom loaders instead of raw text
 - Card skeleton on load

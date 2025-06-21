@@ -5,6 +5,7 @@ import { Calendar } from "lucide-react";
 import useFetchDetails from "@/hooks/useFetchDetails";
 import Tag from "../ui/tag";
 import { useRouter } from "next/navigation";
+import Loader from "../ui/loader";
 
 const GameCard = ({ game }: GameCardProps) => {
   const { data, isLoading } = useFetchDetails(game.slug);
@@ -18,9 +19,7 @@ const GameCard = ({ game }: GameCardProps) => {
       }}
     >
       {isLoading ? (
-        <div className="w-full h-full flex justify-center items-center">
-          Loading...
-        </div>
+        <Loader />
       ) : (
         <>
           {/* Header */}

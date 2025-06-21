@@ -3,14 +3,14 @@ import useFetchDetails from "@/hooks/useFetchDetails";
 import Header from "./Header";
 import Image from "next/image";
 import Body from "./Body";
+import Loader from "../ui/loader";
 
 const Details = ({ slug }: { slug: string }) => {
   const { data, isLoading, error } = useFetchDetails(slug);
 
-  if (isLoading)
-    return <p className="w-full flex justify-center">Loading...</p>;
+  if (isLoading) return <Loader />;
   if (error) return <p className="w-full flex justify-center">Error loading</p>;
-  console.log(data);
+
   return (
     <div className="w-full min-h-screen">
       <div className="relative w-full min-h-[60vh]">
